@@ -1,0 +1,67 @@
+.registration-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f4f6f8;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .registration-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .registration-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .registration-form input[type='text'],
+  .registration-form input[type='email'],
+  .registration-form input[type='tel'],
+  .registration-form input[type='file'] {
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  
+  .registration-form input[type='file'] {
+    padding: 6px;
+    background-color: #fff;
+  }
+  
+  .registration-form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .registration-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  
