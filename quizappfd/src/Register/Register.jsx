@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Register.css";
 import InputField from "../utils/commoncomponents/InputField";
+import { useNavigate } from 'react-router-dom';
+
 
 //  x =1
 // x =2
@@ -9,6 +11,7 @@ import InputField from "../utils/commoncomponents/InputField";
 // setFormData({ ...formData, [name]: value });
 
 const RegistrationModule = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -51,7 +54,7 @@ const RegistrationModule = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
-
+    navigate('/login'); // 🔄 Redirects to Login page
     alert("Form Submitted Successfully!");
   };
 

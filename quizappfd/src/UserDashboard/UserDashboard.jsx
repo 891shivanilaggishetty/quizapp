@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
-import './UserDashboard.css';
+import React, { useState } from "react";
+import "./UserDashboard.css";
+import { useNavigate } from "react-router-dom";
 
 const UserDashboard = ({ profilePic }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="dashboard-container">
       <div className="sidebar">
         <h3>Dashboard</h3>
         <ul>
-          <li>My Courses</li>
+          <li
+            onClick={() => {
+              navigate("/test"); // 🔄 Redirects to Login page
+            }}
+          >
+            My Courses
+          </li>
           <li>Results</li>
         </ul>
       </div>
