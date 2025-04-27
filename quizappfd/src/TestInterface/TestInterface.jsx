@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './TestInterface.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const testData = {
   title: 'GATE Mock Test',
@@ -32,6 +34,15 @@ const testData = {
 
 const MockTestInterface = () => {
   const [answers, setAnswers] = useState({});
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you can handle the submission of answers
+    console.log('Submitted Answers:', answers);
+    alert('Test submitted successfully!');
+    navigate('/report'); // Redirect to results page after submission
+  }
 
   const handleMCQ = (qId, optionIndex) => {
     setAnswers({ ...answers, [qId]: optionIndex });
@@ -42,7 +53,7 @@ const MockTestInterface = () => {
   };
 
   return (
-    <div className="mocktest-container">
+    <form className="mocktest-container" onSubmit={handleSubmit}>
       <div className="question-ledger">
         {testData.sections.flatMap((s) => s.questions).map((q, idx) => (
           <div key={q.id} className={`ledger-item ${answers[q.id] ? 'answered' : ''}`}>
@@ -87,7 +98,8 @@ const MockTestInterface = () => {
           </div>
         ))}
       </div>
-    </div>
+      <button type="submit" className="submit-button">Submit</button>
+    </form>
   );
 };
 
