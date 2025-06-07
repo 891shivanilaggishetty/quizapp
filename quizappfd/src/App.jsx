@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
+import Home from './Home/Home'; // ✅ Import Home Component
 import RegistrationModule from './Register/Register';
 import LoginModule from './Login/Login';  
 import UserDashboard from './UserDashboard/UserDashboard';
@@ -11,7 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<RegistrationModule />} />
+        <Route path="/" element={<Home />} />  {/* ✅ Set Home as default */}
+        <Route path="/register" element={<RegistrationModule />} />
         <Route path="/login" element={<LoginModule />} />
         <Route path="/dashboard" element={<UserDashboard profilePic="https://via.placeholder.com/150" />} />
         <Route path="/test" element={<TestInterface />} />
@@ -20,4 +22,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
